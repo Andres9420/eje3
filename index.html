@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eje 3 Sistemas operativos II</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Raspberry como Sistema Embebido</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('inicio')">Inicio</button>
+    <button onclick="showSection('caracteristicas')">1. Características y Componentes</button>
+    <button onclick="showSection('vulnerabilidades')">2. Vulnerabilidades</button>
+    <button onclick="showSection('arquitectura')">3. Arquitectura de Hardware</button>
+    
+    <button onclick="showSection('dispositivo')">4. Dispositivo Embebido (Raspberry Pi)</button>
+    <button onclick="showSection('mapa')">4.1 Mapa Mental</button>
+    <button onclick="showSection('detalles')">4.2 Detalles Técnicos</button>
+    <button onclick="showSection('comparacion')">5. Comparativa</button>
+  </nav>
+
+  <main>
+    <section id="inicio" class="active">
+      <h2>¿Qué es un Sistema Embebido?</h2>
+      <p>Un sistema embebido es un dispositivo electrónico que integra hardware y software diseñados para cumplir una función específica dentro de un sistema mayor. Aunque no se perciba como una computadora tradicional, sigue el mismo esquema de entrada, procesamiento y salida. Está presente en dispositivos cotidianos como microondas, ascensores o televisores, respondiendo de forma automatizada a acciones simples como presionar un botón..</p>
+      <div>
+        <img src="/pictures/picinicio.png" alt="ejemplos de sistemas embebidos">
+      </div>
+    </section>
+
+    <section id="caracteristicas">
+      <h2>1. Características y Componentes</h2>
+      <p>Incluyen procesador, memoria, interfaces de entrada/salida y un sistema operativo específico para su función. Se enfocan en eficiencia, bajo consumo y estabilidad.</p>
+      <div class>
+        <h2>Características de los sistemas embebidos</h2>
+        <ul>
+          <li><strong>Realizan funciones específicas:</strong> Están diseñados para llevar a cabo tareas altamente especializadas.</li>
+          <li><strong>Funcionan prolongadamente:</strong> Están diseñados para operar de manera continua durante largos períodos de tiempo sin interrupciones. Esta facultad es esencial para muchas aplicaciones.</li>
+          <li><strong>Inician rápidamente:</strong> Tienen la capacidad para arrancar de manera rápida y estar listos para funcionar en un tiempo mínimo. La rapidez con la que un sistema embebido puede ponerse en marcha es vital en situaciones donde se necesita una respuesta inmediata.</li>
+          <li><strong>Son eficientes energéticamente:</strong> Están optimizados para consumir la menor cantidad de energía posible. Es importante sobre todo en aplicaciones que funcionan con baterías o fuentes de energía limitadas.</li>
+          <li><strong>Destacan por su confiabilidad:</strong> La fiabilidad es una característica clave de los sistemas embebidos, ya que se espera que funcionen sin fallos en entornos críticos (como los relacionados a la salud o la seguridad).</li>
+          <li><strong>Es limitado en recursos:</strong> Suelen contar con recursos limitados en términos de memoria, capacidad de procesamiento y almacenamiento.</li>
+        </ul>
+
+        <h2>Componentes de un sistema embebido</h2>
+        <p>A grandes rasgos, un sistema embebido está compuesto por lo siguiente:</p>
+        <ul>
+          <li><strong>Microprocesador:</strong> Este componente actúa como el núcleo del sistema. Es un chip diseñado específicamente para tareas embebidas. Controla todas las operaciones, ejecuta instrucciones y gestiona los recursos del sistema de manera eficiente.</li>
+          <li><strong>Memoria:</strong> Hay dos tipos de memoria en un sistema embebido. La memoria RAM (Random Access Memory) se utiliza para almacenar datos temporales y variables de trabajo. La memoria flash, por otro lado, almacena programas y datos permanentes, como el software del sistema y la configuración.</li>
+          <li><strong>Periféricos:</strong> Son dispositivos adicionales conectados al sistema embebido, los cuales permiten la interacción con el entorno. Abarcan elementos como sensores para recopilar datos del entorno, actuadores para realizar acciones físicas, y dispositivos de entrada/salida para interactuar con los usuarios.</li>
+          <li><strong>Software:</strong> Es la parte inteligente del sistema. Comprende el conjunto de programas y algoritmos que definen las funciones específicas del sistema embebido. Este software dicta cómo el sistema responde y se comporta.</li>
+          <li><strong>Fuente de poder:</strong> Proporciona la energía necesaria para que el sistema funcione correctamente. Puede ser una batería, un adaptador de corriente o cualquier otra fuente de energía diseñada para el sistema en particular.</li>
+          <li><strong>Circuito de reloj:</strong> Es el responsable de sincronizar las operaciones del sistema. Define el ritmo al que el microprocesador ejecuta instrucciones y coordina el funcionamiento de todos los componentes para garantizar un rendimiento apropiado.</li>
+        </ul>
+        <br>
+        <img src="/pictures/componentes.png" alt="componentes" >
+      </div>
+    </section>
+
+    <section id="vulnerabilidades">
+      <div>
+        <h2>2. Vulnerabilidades</h2>
+        <h3>Vulnerabilidades de Software</h3>
+        <ul>
+          <li>Desbordamientos de búfer</li>
+          <li>Ataques de intermediario</li>
+          <li>Ataques de denegación de servicio (DoS)</li>
+          <li>Inyección de código</li>
+          <li>Falta de validación de entradas</li>
+          <li>Falta de seguridad en el almacenamiento de contraseñas</li>
+        </ul>
+        
+        <h3>Vulnerabilidades de Hardware</h3>
+        <ul>
+          <li>Ataques a la red</li>
+          <li>Ataques físicos</li>
+          <li>Vulnerabilidades de hardware</li>
+        </ul>
+        
+        <h3>Vulnerabilidades específicas de los sistemas embebidos</h3>
+        <ul>
+          <li>Recursos limitados</li>
+          <li>Restricciones energéticas</li>
+          <li>Falta de actualizaciones</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="arquitectura">
+      <h2>3. Arquitectura de Hardware</h2>
+      <div>
+        <h2>Estructura común del hardware en sistemas embebidos</h2>
+        <p>Aunque cada sistema embebido puede tener una arquitectura distinta según su función, muchos comparten una estructura básica como la siguiente:</p>
+        <ul>
+          <li>Procesador
+            <ul>
+              <li>Microprocesador</li>
+              <li>Microcontrolador de 4, 8, 16 y 32 bits</li>
+              <li>Procesador de Señales Digitales (DSP)</li>
+              <li>Matriz de puertas programables</li>
+            </ul>
+          </li>
+          <li>Dispositivo de almacenamiento</li>
+          <li>Interfaces de comunicación</li>
+          <li>Puertos para transmisión de datos</li>
+        </ul>
+        <br><br>
+        <img src="/pictures/arquitectura.png" alt="arquitectura">
+      </div>
+    </section>
+
+    <section id="dispositivo">
+      <h2>4. Dispositivo Embebido: Raspberry Pi</h2>
+      <p>
+        La Raspberry Pi es una computadora de bajo costo y tamaño reducido, creada para enseñar computación, pero que ha sido ampliamente adoptada en el desarrollo de proyectos embebidos. 
+        Aunque no es un sistema embebido puro, como un microcontrolador dedicado, su capacidad para ejecutar Linux, controlar hardware a través de puertos GPIO y adaptarse a tareas específicas la convierte en una plataforma ideal para aplicaciones como estaciones meteorológicas, domótica, automatización o robótica. 
+        Su versatilidad, comunidad activa y facilidad de uso la hacen una herramienta accesible tanto para el aprendizaje como para la creación de sistemas embebidos funcionales.
+      </p>
+      <div >
+        <img src="/pictures/fotoderaspberry.jpg" alt="fotodelaraspberry">
+      </div>
+    </section>
+
+    <section id="mapa">
+      <h2>4.1 Mapa Mental de raspberry pi</h2>
+      <p>Representación gráfica de los elementos que componen Raspberry pi realizado en canvas :</p>
+      <p>https://www.canva.com/design/DAGnqUBUDaA/EtjIAdRxnfehkYoRJn4dbA/edit?utm_content=DAGnqUBUDaA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton</p>
+      <div>
+        <img src="/pictures/mapamental.png" alt="Mapa Mental">        
+      </div>
+    </section>
+
+    <section id="detalles">
+      <h2>4.2 Especificaciones Tecnicas Raspberry pi 4</h2>
+       <ul>
+        <li><strong>Procesador:</strong> Broadcom BCM2711, Cortex-A72 de cuatro núcleos (ARM v8) SoC de 64 bits a 1,5 GHz</li>
+        <li><strong>Memoria:</strong> 8GB LPDDR4</li>
+        <li><strong>Conectividad:</strong>
+            <ul>
+                <li>Wi-Fi IEEE 802.11 b/g/n/ac (2.4 GHz y 5.0 GHz)</li>
+                <li>Bluetooth 5.0, BLE</li>
+                <li>Gigabit Ethernet</li>
+            </ul>
+        </li>
+        <li><strong>Puertos USB:</strong>
+            <ul>
+                <li>2 x USB 3.0</li>
+                <li>2 x USB 2.0</li>
+            </ul>
+        </li>
+        <li><strong>GPIO:</strong> Estándar de 40 pines</li>
+        <li><strong>Video y sonido:</strong>
+            <ul>
+                <li>2 puertos micro HDMI (hasta 4Kp60 soportado)</li>
+                <li>Puerto DSI para pantalla</li>
+                <li>Puerto CSI para cámara</li>
+            </ul>
+        </li>
+        <li><strong>Almacenamiento:</strong> Ranura para tarjeta microSD (para sistema operativo y datos)</li>
+        <li><strong>Alimentación:</strong>
+            <ul>
+                <li>5V DC a través del conector USB-C (mínimo 3A)</li>
+                <li>5V DC a través de los GPIO (mínimo 3A)</li>
+                <li>Power Over Ethernet (PoE), mediante HAT PoE adicional</li>
+            </ul>
+        </li>
+        <li><strong>Temperatura de funcionamiento:</strong> 0–50 °C</li>
+        <li><strong>Dimensiones:</strong> 88 x 58 x 18.5 mm</li>
+    </ul>
+    
+      <div>
+        <img src="/pictures/especificaciones.PNG" alt="especificaciones raspberry pi4">
+      </div>
+    </section>
+
+    <section id="comparacion">
+      <h2>5. Comparativa con Otros Dispositivos Embebidos</h2>
+      <p>Aqui comparamos Raspberry con otros dispositivos embebidos similares:</p>
+      <table>
+        <caption>Comparativa con Otros Dispositivos Embebidos</caption>
+        <thead>
+            <tr>
+                <th>Dispositivo</th>
+                <th>Sistema Operativo</th>
+                <th>Procesador</th>
+                <th>Propósito</th>
+                <th>Vulnerabilidades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Raspberry Pi (con Kodi)</td>
+                <td>Linux (LibreELEC, OSMC)</td>
+                <td>Broadcom BCM2711 (Raspberry Pi 4)</td>
+                <td>Streaming + personalización</td>
+                <td>Puertos abiertos, mal uso del sistema operativo</td>
+            </tr>
+            <tr>
+                <td>Roku</td>
+                <td>Roku OS</td>
+                <td>Procesador personalizado de bajo consumo</td>
+                <td>Streaming</td>
+                <td>Apps falsas, acceso remoto</td>
+            </tr>
+            <tr>
+                <td>Amazon Fire Stick</td>
+                <td>Fire OS (basado en Android)</td>
+                <td>Quad-Core ARM Cortex-A53</td>
+                <td>Streaming</td>
+                <td>Rooting, malware en apps externas</td>
+            </tr>
+            <tr>
+                <td>Smart TV LG</td>
+                <td>webOS</td>
+                <td>ARM Cortex-A53 Quad-Core</td>
+                <td>Televisión inteligente</td>
+                <td>Exposición de puertos, firmware sin cifrar</td>
+            </tr>
+        </tbody>
+    </table>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
+

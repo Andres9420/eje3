@@ -1,0 +1,90 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+}
+
+header {
+  background-color: #b3004b; /* color mora */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #68b82e; /* color hoja */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav button:hover {
+  background-color: #5aa026; /* más oscuro al pasar el mouse */
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  color: #b3004b; /* título mora */
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #b3004b;
+  color: white;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+footer {
+  background-color: #b3004b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
